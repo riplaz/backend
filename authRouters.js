@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const controller = reauire("../controllers/userController");
+const authController = reauire("../controllers/authController");
 
-router.get("/", controller.getUsers);
-router
+router.post("/register", authController.register);
+router.post("/login", authController.login);
+router.post("/logout", authController.logout);
+
+module.exports = router 
